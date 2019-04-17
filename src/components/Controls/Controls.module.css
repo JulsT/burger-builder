@@ -1,0 +1,52 @@
+.container {
+  background-color: rgb(197, 142, 70);
+  padding: 20px;
+  text-align: center;
+  font-size: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+.row {
+  width: 400px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex: 1;
+}
+.label {
+  text-transform: capitalize;
+}
+button:disabled,
+button:disabled:hover {
+  background-color: gray;
+}
+.btn {
+  width: 80px;
+  border-radius: 4px;
+  border: none;
+  color: #ffffff;
+  text-align: center;
+  font-size: 2rem;
+  padding: 10px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+  text-transform: uppercase;
+}
+.addBtn {
+  background-color: #614d0b56;
+}
+.deleteBtn {
+  background-color: #241c0256;
+}
+.orderBtn {
+  width: 250px;
+  background-color: #f4511e;
+  padding: 25px;
+}
+.orderBtn:hover {
+  background-color: #c94118;
+}

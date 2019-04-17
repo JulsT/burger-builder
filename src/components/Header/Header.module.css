@@ -1,0 +1,45 @@
+.header {
+  position: fixed;
+  width: 100%;
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  background: linear-gradient(to right, #fbb73f, #ca4200);
+  z-index: 90;
+  color: white;
+  font-size: 2rem;
+  padding: 0 20px;
+  /* background-image: url("../../assets/background.jpg");
+  height: 500px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover; */
+}
+img.logo {
+  width: 100px;
+}
+.brand {
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+}
+.header nav {
+  height: 100%;
+}
+.header nav a {
+  display: block;
+  float: left;
+  text-align: center;
+  color: white;
+  height: 100%;
+  padding: 30px 15px;
+  text-decoration: none;
+}
+.header nav a:hover {
+  background-color: #fbb73f;
+}
+.header nav a:active,
+.active {
+  background-color: #fbb73f;
+  box-shadow: 0px -5px 0px rgb(40, 167, 218) inset;
+}

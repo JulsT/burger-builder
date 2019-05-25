@@ -7,7 +7,7 @@
   background: linear-gradient(to right, #fbb73f, #ca4200);
   z-index: 90;
   color: white;
-  font-size: 2rem;
+  font-size: 1.8rem;
   padding: 0 20px;
   /* background-image: url("../../assets/background.jpg");
   height: 500px;
@@ -16,30 +16,75 @@
   background-size: cover; */
 }
 img.logo {
-  width: 100px;
+  width: 80px;
 }
-.brand {
-  font-weight: bold;
+
+.brand a {
+  height: 100%;
   display: flex;
   align-items: center;
+  text-align: center;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.8rem;
+}
+.brand a:hover {
+  color: rgb(49, 48, 48);
 }
 .header nav {
   height: 100%;
 }
-.header nav a {
+.header nav a,
+.header nav span {
   display: block;
   float: left;
   text-align: center;
   color: white;
   height: 100%;
-  padding: 30px 15px;
+  padding: 35px 15px;
   text-decoration: none;
 }
-.header nav a:hover {
+.header nav a:hover,
+.header nav span:hover {
   background-color: #fbb73f;
 }
 .header nav a:active,
+.header nav span:active,
 .active {
   background-color: #fbb73f;
   box-shadow: 0px -5px 0px rgb(40, 167, 218) inset;
+}
+
+.burger {
+  display: none;
+  text-align: center;
+  height: 100%;
+  padding: 20px 15px;
+}
+.burger div {
+  width: 50px;
+  height: 5px;
+  background-color: white;
+  margin: 10px 0;
+  transition: 0.4s;
+}
+.change .bar1 {
+  -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+  transform: rotate(-53deg) translate(-12px, 13px);
+}
+.change .bar2 {
+  opacity: 0;
+}
+.change .bar3 {
+  -webkit-transform: rotate(45deg) translate(-8px, -8px);
+  transform: rotate(50deg) translate(-4px, -14px);
+}
+@media (max-width: 700px) {
+  .burger {
+    display: block;
+  }
+  .header nav {
+    display: none;
+  }
 }

@@ -1,21 +1,18 @@
 .container {
-  width: 100%;
+  width: 90%;
   margin: auto;
-  height: 250px;
-  overflow: scroll;
   text-align: center;
   font-weight: bold;
   font-size: 1.2rem;
 }
 @media (min-width: 500px) and (min-height: 401px) {
   .container {
-    width: 100%;
-    height: 400px;
+    width: 90%;
+    padding: 0 1rem;
   }
 }
 @media (min-width: 1000px) {
   .container {
     width: 700px;
-    height: 500px;
   }
 }

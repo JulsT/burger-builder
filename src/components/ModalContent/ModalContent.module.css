@@ -6,17 +6,17 @@
   justify-content: flex-start;
   width: 100%;
   margin: 0;
-  padding: 2.5rem;
+  padding: 2rem;
   background-color: white;
   border-radius: 0.3125rem;
   box-shadow: 0 0 2.5rem rgba(0, 0, 0, 0.5);
   transform: scale(1);
   transition: transform 0.25s;
   transition-delay: 0.15s;
-  font-size: 2rem;
+  font-size: 1.5rem;
 }
 .container > * {
-  margin: 1rem;
+  margin: 0.8rem;
 }
 .modalFooter {
   position: relative;
@@ -26,37 +26,4 @@
   width: 100%;
   margin: 0;
   padding: 1.875rem 0 0;
-}
-.action {
-  position: relative;
-  margin-left: 0.625rem;
-  padding: 0.625rem 1.25rem;
-  border: none;
-  background-color: slategray;
-  border-radius: 0.25rem;
-  color: white;
-  font-size: 1.8rem;
-  font-weight: 600;
-  overflow: hidden;
-  z-index: 1;
-}
-.action:before {
-  position: absolute;
-  content: "";
-  top: 0;
-  left: 0;
-  width: 0%;
-  height: 100%;
-  background-color: rgba(255, 255, 255, 0.2);
-  transition: width 0.25s;
-  z-index: 0;
-}
-.action:first-child {
-  background-color: #2ecc71;
-}
-.action:last-child {
-  background-color: #e74c3c;
-}
-.action:hover.action:before {
-  width: 100%;
 }

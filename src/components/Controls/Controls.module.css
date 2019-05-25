@@ -2,7 +2,7 @@
   background-color: rgb(197, 142, 70);
   padding: 20px;
   text-align: center;
-  font-size: 2rem;
+  font-size: 1.5rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -10,7 +10,8 @@
   height: 100%;
 }
 .row {
-  width: 400px;
+  max-width: 400px;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;

@@ -1,9 +1,15 @@
 import React from "react";
 import classes from "./ModalContent.module.css";
-const ModalContent = ({ ingredients, totalPrice, closeModal }) => {
+import Button from "../Button/Button";
+const ModalContent = ({
+  ingredients,
+  totalPrice,
+  closeModal,
+  orderContinue,
+  error
+}) => {
   const ingredientsArray = Object.keys(ingredients);
-
-  return (
+  let modalContent = (
     <div className={classes.container}>
       <h3>Your Order</h3>
       <p>A delicious burger with the following ingredients:</p>
@@ -19,13 +25,19 @@ const ModalContent = ({ ingredients, totalPrice, closeModal }) => {
       </p>
       <p>Continue to Checkout?</p>
       <footer className={classes.modalFooter}>
-        <button className={classes.action}>Continue</button>
-        <button onClick={closeModal} className={classes.action}>
-          Cancel
-        </button>
+        <Button name="Cancel" clicked={closeModal} type="cancel" />
+        <Button name="Continue" clicked={orderContinue} type="continue" />
       </footer>
     </div>
   );
+  if (error) {
+    modalContent = (
+      <div className={classes.container}>
+        <p>{error}</p>
+      </div>
+    );
+  }
+  return <React.Fragment>{modalContent}</React.Fragment>;
 };
 
 export default ModalContent;

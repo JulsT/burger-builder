@@ -6,7 +6,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-size: 16px;
+  font-size: 14px;
 }
 html {
   font-size: 14px;
@@ -21,4 +21,12 @@ html {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+.container {
+  width: 100%;
+  margin: auto;
+  padding-top: 100px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.2rem;
 }

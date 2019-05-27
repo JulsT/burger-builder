@@ -21,6 +21,25 @@ export const submitOrder = data => {
     return axios
       .post(`/orders.json?auth=${token}`, order)
       .then(resp => {
+        if (
+          JSON.stringify(getState().auth.contactData) !== JSON.stringify(data)
+        )
+          axios
+            .patch(
+              `https://burger-builder-761b3.firebaseio.com/users/${
+                order.userId
+              }.json`,
+              { contactData: data }
+            )
+            .then(res => {
+              dispatch({ type: actionTypes.UPDATE_USER_DATA, payload: data });
+            })
+            .catch(e =>
+              dispatch({
+                type: actionTypes.SUBMIT_ORDER_FAILURE,
+                payload: e.message
+              })
+            );
         dispatch({
           type: actionTypes.SUBMIT_ORDER_SUCCESS,
           payload: resp.data

@@ -10,9 +10,9 @@ import { submitOrder } from "../../actions/order";
 import { bindActionCreators } from "redux";
 
 class CheckoutPage extends Component {
-  // componentDidMount(){
-  // 	this.updatePurchaseable(this.props.ingredients);
-  // }
+  componentDidMount() {
+    window.scrollTo(0, 0);
+  }
   updatePurchaseable = state => {
     const arr = Object.values(state);
     const result = arr.reduce((sum, currentEl) => sum + currentEl, 0);
@@ -28,7 +28,12 @@ class CheckoutPage extends Component {
     let form = (
       <Route
         path={`${this.props.match.path}/contact-data`}
-        render={() => <ContactForm onOrderClick={this.props.submitOrder} />}
+        render={() => (
+          <ContactForm
+            onOrderClick={this.props.submitOrder}
+            contactData={this.props.contactData}
+          />
+        )}
       />
     );
     if (this.props.isLoading) {
@@ -43,7 +48,6 @@ class CheckoutPage extends Component {
         </h2>
       );
     }
-    // console.log(Object.values(this.props.ingredients).some(el => el > 0));
     return (
       <>
         {this.updatePurchaseable(this.props.ingredients) === true ? (
@@ -77,7 +81,8 @@ const mapStateToProps = state => {
     ingredients: state.burger.ingredients,
     totalPrice: state.burger.totalPrice,
     isLoading: state.order.isLoading,
-    error: state.order.error
+    error: state.order.error,
+    contactData: state.auth.contactData
   };
 };
 const mapDispatchToProps = dispatch =>

@@ -31,7 +31,7 @@ const validationSchema = Yup.object().shape({
 
 class ContactForm extends Component {
   render() {
-    const { onOrderClick } = this.props;
+    const { onOrderClick, contactData } = this.props;
     const animation = `${classes.input} ${classes.error} ${classes.animated} ${
       classes.shake
     }`;
@@ -42,15 +42,7 @@ class ContactForm extends Component {
       <div className={classes.container}>
         <h2>Enter your Contact Data</h2>
         <Formik
-          initialValues={{
-            name: "",
-            email: "",
-            country: "",
-            region: "",
-            street: "",
-            postalCode: "",
-            deliveryMethod: ""
-          }}
+          initialValues={contactData}
           validationSchema={validationSchema}
           onSubmit={(values, isValid) => {
             if (isValid) {

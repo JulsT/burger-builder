@@ -8,6 +8,7 @@ import { toast } from "react-toastify";
 class OrdersPage extends Component {
   state = { orders: [], loading: false };
   componentDidMount() {
+    window.scrollTo(0, 0);
     this.setState({ loading: true });
     const orders = [];
     toast.dismiss();
@@ -28,7 +29,6 @@ class OrdersPage extends Component {
         this.setState({ orders, loading: false });
       })
       .catch(e => {
-        console.log(e);
         toast.error(e.message, { autoClose: 5000 });
         this.setState({ loading: false });
       });

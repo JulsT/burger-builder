@@ -24,6 +24,34 @@ export const signup = data => {
         localStorage.setItem("token", res.data.idToken);
         localStorage.setItem("expiresDate", date);
         dispatch({ type: actionTypes.SIGNUP_SUCCESS, payload: res.data });
+        const user = {
+          contactData: {
+            name: "",
+            email: "",
+            country: "",
+            region: "",
+            street: "",
+            postalCode: "",
+            deliveryMethod: ""
+          }
+        };
+        axios
+          .put(
+            `https://burger-builder-761b3.firebaseio.com/users/${
+              res.data.localId
+            }.json`,
+            user
+          )
+          .then(res =>
+            dispatch({ type: actionTypes.ADD_USER, payload: user.contactData })
+          );
+      })
+      .catch(err => {
+        toast.error(err.response.data.error.message, { autoClose: 5000 });
+        dispatch({
+          type: actionTypes.SIGNUP_FAILURE,
+          payload: err.response.data.error.message
+        });
       })
       .catch(err => {
         toast.error(err.response.data.error.message, { autoClose: 5000 });
@@ -56,6 +84,18 @@ export const login = data => {
         localStorage.setItem("expiresDate", date);
         if (setCheckoutPath) history.replace("/checkout");
         else history.replace("/builder");
+        axios
+          .get(
+            `https://burger-builder-761b3.firebaseio.com/users/${
+              result.data.localId
+            }.json`
+          )
+          .then(resp =>
+            dispatch({
+              type: actionTypes.FETCH_USER_DATA,
+              payload: resp.data.contactData
+            })
+          );
         dispatch({ type: actionTypes.LOGIN_SUCCESS, payload: result.data });
       })
       .catch(err => {

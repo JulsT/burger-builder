@@ -7,7 +7,8 @@ const initialState = {
   isAuthenticated: !!token,
   token,
   error: null,
-  isLoading: false
+  isLoading: false,
+  contactData: null
 };
 
 const auth = (state = initialState, action) => {
@@ -28,6 +29,13 @@ const auth = (state = initialState, action) => {
         token: action.payload.idToken,
         isAuthenticated: true
       };
+    case actionTypes.ADD_USER:
+    case actionTypes.FETCH_USER_DATA:
+    case actionTypes.UPDATE_USER_DATA:
+      return {
+        ...state,
+        contactData: action.payload
+      };
     case actionTypes.LOGIN_FAILURE:
     case actionTypes.SIGNUP_FAILURE:
       return {
@@ -42,7 +50,8 @@ const auth = (state = initialState, action) => {
         isAuthenticated: false,
         token: "",
         error: null,
-        isLoading: false
+        isLoading: false,
+        contactData: null
       };
     default:
       return state;

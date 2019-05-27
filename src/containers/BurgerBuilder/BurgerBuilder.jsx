@@ -15,6 +15,9 @@ class BurgerBuilder extends Component {
     openModal: false,
     error: null
   };
+  componentDidMount() {
+    window.scrollTo(0, 0);
+  }
   handleOpenModal = () => {
     this.setState({ openModal: true });
     this.props.purchaseOrder();

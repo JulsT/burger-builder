@@ -70,15 +70,15 @@ img.logo {
   transition: 0.4s;
 }
 .change .bar1 {
-  -webkit-transform: rotate(-45deg) translate(-9px, 6px);
-  transform: rotate(-53deg) translate(-12px, 13px);
+  -webkit-transform: rotate(-45deg) translate(-12px, 10px);
+  transform: rotate(-45deg) translate(-12px, 10px);
 }
 .change .bar2 {
   opacity: 0;
 }
 .change .bar3 {
-  -webkit-transform: rotate(45deg) translate(-8px, -8px);
-  transform: rotate(50deg) translate(-4px, -14px);
+  -webkit-transform: rotate(45deg) translate(-10px, -10px);
+  transform: rotate(45deg) translate(-10px, -10px);
 }
 @media (max-width: 700px) {
   .burger {

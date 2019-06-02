@@ -33,7 +33,7 @@ const persistor = persistStore(store);
 ReactDOM.render(
   <Provider store={store}>
     <PersistGate persistor={persistor} loading={null}>
-      <Router history={history} onUpdate={() => window.scrollTo(0, 0)}>
+      <Router history={history}>
         <App />
       </Router>
     </PersistGate>
